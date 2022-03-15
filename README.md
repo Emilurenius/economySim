@@ -1,0 +1,1 @@
+This will become a simulation of an economy, with AI trading between different trade nodes.

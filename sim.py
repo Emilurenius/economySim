@@ -2,13 +2,13 @@ import sys
 
 comodities = {
     'coal': {
-        'neededEquipment': ['excavator']
+        'neededEquipment': ['excavatorx0']
     },
     'excavator': {
         'neededEquipment': ['coal', 'iron'],
     },
     'iron': {
-        'neededEquipment': ['excavator']
+        'neededEquipment': ['excavatorx0']
     }
 }
 
@@ -22,6 +22,8 @@ class tradeNode:
 
     def produce(self):
         print(f'{self.name} Producing {self.produces}')
+        self.comodities[comodities[self.produces]['neededEquipment'][0]] -= 1
+        print
 
 tradeNodes = [
     tradeNode('Coal Mine', 'ind', 'nom', ['coal'], {'coal': 40, 'excavator': 3}),
